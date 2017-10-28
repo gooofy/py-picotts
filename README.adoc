@@ -1,0 +1,82 @@
+py-picotts
+----------
+
+Some simple wrappers around SVOX Pico TTS intended to make using this TTS
+for wave file generation as convenient as possible. 
+
+Target audience are developers who would like to use SVOX Pico TTS as-is for speech
+synthesis in their Python application on GNU/Linux operating systems.
+
+Constructive comments, patches and pull-requests are very welcome.
+
+Examples
+~~~~~~~~
+
+First, imports:
+[source,python]
+----
+import wave
+import StringIO
+from picotts import PicoTTS
+----
+
+english (default) synthesis:
+
+[source,python]
+----
+picotts = PicoTTS()
+wavs = picotts.synth_wav('Hello World!')
+wav = wave.open(StringIO.StringIO(wavs))
+print wav.getnchannels(), wav.getframerate(), wav.getnframes()
+----
+result:
+----
+1 16000 22720
+----
+
+try a different language:
+[source,python]
+----
+picotts.voice = 'de-DE'
+wavs = picotts.synth_wav('Hallo Welt!')
+wav = wave.open(StringIO.StringIO(wavs))
+print wav.getnchannels(), wav.getframerate(), wav.getnframes()
+----
+result:
+----
+1 16000 22464
+----
+
+List Available Voices
+^^^^^^^^^^^^^^^^^^^^^
+[source,python]
+----
+l = picotts.voices
+----
+result:
+----
+['de-DE', 'en-GB', 'en-US', 'es-ES', 'fr-FR', 'it-IT']
+----
+
+Links
+~~~~~
+
+* https://packages.debian.org/jessie/libttspico0 [Debian Package]
+
+Requirements
+~~~~~~~~~~~~
+
+* Python 2.7
+* pico2wave binary installed and in PATH
+
+License
+~~~~~~~
+
+My own code is LGPLv3 licensed unless otherwise noted in the script's copyright
+headers.
+
+Author
+~~~~~~
+
+Guenter Bartsch <guenter@zamia.org>
+

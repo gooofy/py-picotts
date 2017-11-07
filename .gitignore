@@ -20,3 +20,8 @@ tmp
 old
 README.html
 README
+README.md
+README.xml
+build
+dist
+py_picotts.egg-info

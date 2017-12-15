@@ -2,10 +2,8 @@
 
 from setuptools import setup, find_packages
 
-EXCLUDED = ['*.tests', '*.tests.*', 'tests.*', 'tests']
-
 setup(name                 ='py-picotts',
-      version              ='0.1.0',
+      version              ='0.1.1',
       description          ='Python interface for SVOX Pico TTS pico2wave',
       long_description     = open('README.md').read(),
       author               = 'Guenter Bartsch',
@@ -26,7 +24,6 @@ setup(name                 ='py-picotts',
       platforms            = 'Linux',
       license              = 'LGPLv3',
       package_dir          = {'picotts': 'picotts'},
-      test_suite           = 'tests',
-      packages             = find_packages('.', EXCLUDED),
+      packages             = ['picotts']
       )
 

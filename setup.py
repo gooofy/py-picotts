@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(name                 ='py-picotts',
-      version              ='0.1.1',
+      version              ='0.1.2',
       description          ='Python interface for SVOX Pico TTS pico2wave',
       long_description     = open('README.md').read(),
       author               = 'Guenter Bartsch',
@@ -15,14 +15,14 @@ setup(name                 ='py-picotts',
                               'Topic :: Multimedia :: Sound/Audio :: Sound Synthesis',
                               'Topic :: Multimedia :: Sound/Audio :: Speech',
                               'Operating System :: POSIX :: Linux',
-                              'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
+                              'License :: OSI Approved :: Apache Software License',
                               'Programming Language :: Python :: 2',
                               'Programming Language :: Python :: 2.7',
                               'Programming Language :: Python :: 3',
                               'Programming Language :: Python :: 3.4',
                              ],
       platforms            = 'Linux',
-      license              = 'LGPLv3',
+      license              = 'Apache',
       package_dir          = {'picotts': 'picotts'},
       packages             = ['picotts']
       )

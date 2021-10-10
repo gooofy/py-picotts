@@ -85,4 +85,7 @@ class PicoTTS(object):
         return self._voice
     @voice.setter
     def voice(self, v):
-        self._voice = v
+        if v in VOICES:
+            self._voice = v
+        else:
+            print("Unknown voice, supported voices:{voices}".format(voices=VOICES))

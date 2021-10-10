@@ -37,7 +37,7 @@ result:
 try a different language:
 [source,python]
 ----
-picotts.voice = 'de-DE'
+picotts.voice('de-DE')
 wavs = picotts.synth_wav('Hallo Welt!')
 wav = wave.open(StringIO.StringIO(wavs))
 print wav.getnchannels(), wav.getframerate(), wav.getnframes()
